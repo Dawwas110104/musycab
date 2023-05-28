@@ -240,10 +240,10 @@
       <div class="main-sidebar sidebar-style-2">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="index.html">Stisla</a>
+            <a href="index.html">Evote IPM Sepanjang</a>
           </div>
           <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">St</a>
+            <a href="index.html">IPM</a>
           </div>
         </aside>
       </div>
@@ -270,13 +270,13 @@
   <script src="../assets/js/stisla.js"></script>
 
   <!-- JS Libraies -->
-{% block plugins_js %}{% endblock %}
+
 
   <!-- Template JS File -->
   <script src="../assets/js/scripts.js"></script>
   <script src="../assets/js/custom.js"></script>
 
   <!-- Page Specific JS File -->
-{% block page_js %}{% endblock %}
+
 </body>
 </html>
