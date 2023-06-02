@@ -62,7 +62,11 @@
 
               <li class="menu-header">Data</li>
               <li class="nav-item">
-                <a href="#" class="nav-link"><i class="far fa-file-alt"></i> <span>Data User</span></a>
+                <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i> <span>Data User</span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Data Formatur</a></li>
+                  <li><a href="#">Data Pemilih</a></li>
+                </ul>
               </li>
             </ul>
         </aside>
@@ -72,95 +76,39 @@
       <div class="main-content">
       <section class="section">
           <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="col-lg-12 col-md-4 col-sm-12">
               <div class="card card-statistic-2">
                 <div class="card-stats">
-                  <div class="card-stats-title">Order Statistics -
-                    <div class="dropdown d-inline">
-                      <a class="font-weight-600 dropdown-toggle" data-toggle="dropdown" href="#" id="orders-month">August</a>
-                      <ul class="dropdown-menu dropdown-menu-sm">
-                        <li class="dropdown-title">Select Month</li>
-                        <li><a href="#" class="dropdown-item">January</a></li>
-                        <li><a href="#" class="dropdown-item">February</a></li>
-                        <li><a href="#" class="dropdown-item">March</a></li>
-                        <li><a href="#" class="dropdown-item">April</a></li>
-                        <li><a href="#" class="dropdown-item">May</a></li>
-                        <li><a href="#" class="dropdown-item">June</a></li>
-                        <li><a href="#" class="dropdown-item">July</a></li>
-                        <li><a href="#" class="dropdown-item active">August</a></li>
-                        <li><a href="#" class="dropdown-item">September</a></li>
-                        <li><a href="#" class="dropdown-item">October</a></li>
-                        <li><a href="#" class="dropdown-item">November</a></li>
-                        <li><a href="#" class="dropdown-item">December</a></li>
-                      </ul>
-                    </div>
-                  </div>
+                  <div class="card-stats-title">Statistik</div>
                   <div class="card-stats-items">
                     <div class="card-stats-item">
-                      <div class="card-stats-item-count">24</div>
-                      <div class="card-stats-item-label">Pending</div>
+                      <div class="card-stats-item-count">11</div>
+                      <div class="card-stats-item-label">Calon Formatur</div>
                     </div>
                     <div class="card-stats-item">
-                      <div class="card-stats-item-count">12</div>
-                      <div class="card-stats-item-label">Shipping</div>
+                      <div class="card-stats-item-count">75</div>
+                      <div class="card-stats-item-label">Total Pemilih</div>
                     </div>
                     <div class="card-stats-item">
-                      <div class="card-stats-item-count">23</div>
-                      <div class="card-stats-item-label">Completed</div>
+                      <div class="card-stats-item-count">50</div>
+                      <div class="card-stats-item-label">Sudah Memilih</div>
+                    </div>
+
+                    <div class="card-stats-item">
+                      <div class="card-stats-item-count">25</div>
+                      <div class="card-stats-item-label">Belum Memilih</div>
                     </div>
                   </div>
                 </div>
-                <div class="card-icon shadow-primary bg-primary">
-                  <i class="fas fa-archive"></i>
-                </div>
+
                 <div class="card-wrap">
-                  <div class="card-header">
-                    <h4>Total Orders</h4>
-                  </div>
-                  <div class="card-body">
-                    59
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-12">
-              <div class="card card-statistic-2">
-                <div class="card-chart">
-                  <canvas id="balance-chart" height="80"></canvas>
-                </div>
-                <div class="card-icon shadow-primary bg-primary">
-                  <i class="fas fa-dollar-sign"></i>
-                </div>
-                <div class="card-wrap">
-                  <div class="card-header">
-                    <h4>Balance</h4>
-                  </div>
-                  <div class="card-body">
-                    $187,13
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-12">
-              <div class="card card-statistic-2">
-                <div class="card-chart">
-                  <canvas id="sales-chart" height="80"></canvas>
-                </div>
-                <div class="card-icon shadow-primary bg-primary">
-                  <i class="fas fa-shopping-bag"></i>
-                </div>
-                <div class="card-wrap">
-                  <div class="card-header">
-                    <h4>Sales</h4>
-                  </div>
-                  <div class="card-body">
-                    4,732
-                  </div>
+                  <div class="card-body"></div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="row">
+
+          <!-- <div class="row">
             <div class="col-lg-8">
               <div class="card">
                 <div class="card-header">
@@ -544,12 +492,12 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
         </section>
       </div>
       <footer class="main-footer">
         <div class="footer-left">
-          Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Nauval Azhar</a>
+          Copyright &copy; 2023 <div class="bullet"></div> Design By <a href="#">Hangker Sepanjang</a>
         </div>
         <div class="footer-right">
         </div>
