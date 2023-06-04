@@ -1,13 +1,18 @@
-@extends('admin.index')
-
-@section('header')
-<h2>Content1 Puppy Dog</h2>
-@endsection
+@extends('layouts.dashboard')
 
 @section('content')
-<h2>Content1 Puppy Dog</h2>
-@endsection
+    <div class="row">
+        <div class="col-lg-12 col-md-4 col-sm-12">
+        <div class="card card-statistic-2">
+            <div class="card-stats">
+            <div class="card-stats-title">Formatur</div>
+            
+            </div>
 
-@section('footer')
-<h2>Content1 Puppy Dog</h2>
+            <div class="card-wrap">
+            <div class="card-body"></div>
+            </div>
+        </div>
+        </div>
+  </div>
 @endsection

@@ -24,8 +24,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('/admin', AdminController::class);
 
-// Route::get('/admin/formatur', [App\Http\Controllers\AdminController::class, 'coba'])->name('admin.formatur');
-
-Route::get('/admin/coba', function () {
-    return view('auth.login');
-})->name('admin.formatur');
+Route::get('/admin/formatur/index', [App\Http\Controllers\AdminController::class, 'formatur'])->name('admin.formatur');
+Route::get('/admin/pemilih/index', [App\Http\Controllers\AdminController::class, 'pemilih'])->name('admin.pemilih');
