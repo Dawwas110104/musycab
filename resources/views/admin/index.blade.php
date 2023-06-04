@@ -64,7 +64,7 @@
               <li class="nav-item">
                 <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i> <span>Data User</span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">Data Formatur</a></li>
+                  <li><a href="{{ route('admin.formatur') }}">Data Formatur</a></li>
                   <li><a href="#">Data Pemilih</a></li>
                 </ul>
               </li>

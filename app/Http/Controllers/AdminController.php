@@ -82,8 +82,8 @@ class AdminController extends Controller
         //
     }
 
-    public function formatur()
+    public function coba()
     {
-        return view('admin.formatur');
+        return view('admin.index');
     }
 }
