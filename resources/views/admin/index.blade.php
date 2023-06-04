@@ -74,7 +74,9 @@
 
       <!-- Main Content -->
       <div class="main-content">
+        @yield('header')
         @yield('content')
+        @yield('footer')
         <!-- <section class="section">
           <div class="row">
             <div class="col-lg-12 col-md-4 col-sm-12">
