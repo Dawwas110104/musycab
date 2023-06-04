@@ -81,4 +81,11 @@ class AdminController extends Controller
     {
         //
     }
+
+    public function formatur()
+    {
+        $id = 2;
+        return $id;
+        return view('admin.formatur');
+    }
 }

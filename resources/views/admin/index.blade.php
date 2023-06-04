@@ -74,7 +74,8 @@
 
       <!-- Main Content -->
       <div class="main-content">
-      <section class="section">
+        @yield('content')
+        <!-- <section class="section">
           <div class="row">
             <div class="col-lg-12 col-md-4 col-sm-12">
               <div class="card card-statistic-2">
@@ -108,7 +109,7 @@
             </div>
           </div>
 
-          <!-- <div class="row">
+          <div class="row">
             <div class="col-lg-8">
               <div class="card">
                 <div class="card-header">
@@ -492,8 +493,8 @@
                 </div>
               </div>
             </div>
-          </div> -->
-        </section>
+          </div>
+        </section> -->
       </div>
       <footer class="main-footer">
         <div class="footer-left">

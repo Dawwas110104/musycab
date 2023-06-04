@@ -23,3 +23,5 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('/admin', AdminController::class);
+
+Route::get('admin/fomatur', [App\Http\Controllers\AdminController::class, 'formatur']);
