@@ -108,9 +108,13 @@
                     </div>
 
                     <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
-                        Login
-                    </button>
+                        <a href="{{ route('admin.index') }}" class="btn btn-primary btn-lg btn-block">
+                            Login
+                        </a>
+
+                        <!-- <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
+                            Login
+                        </button> -->
                     </div>
                 </form>
             </div>
