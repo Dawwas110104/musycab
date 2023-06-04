@@ -24,4 +24,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('/admin', AdminController::class);
 
-Route::get('admin/formatur', [App\Http\Controllers\AdminController::class, 'formatur']);
+Route::get('/admin/formatur', [App\Http\Controllers\AdminController::class, 'formatur'])->name('admin.formatur');
+
