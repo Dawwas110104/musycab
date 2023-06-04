@@ -1,4 +1,3 @@
-sjfbvsjvbkbv
 @extends('admin.index')
 
 @section('header')
