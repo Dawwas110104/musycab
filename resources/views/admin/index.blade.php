@@ -51,7 +51,7 @@
         <div class="card-header">
           <h4>Perolehan Suara Formatur</h4>
           <div class="card-header-action dropdown">
-            <a href="#" data-toggle="dropdown" class="btn btn-danger dropdown-toggle">Month</a>
+            <a href="#" data-toggle="dropdown" class="btn btn-danger dropdown-toggle">Live</a>
             <ul class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
               <li class="dropdown-title">Select Period</li>
               <li><a href="#" class="dropdown-item">Today</a></li>
@@ -114,7 +114,7 @@
                 </div>
               </div>
             </li>
-            <!-- <li class="media">
+            <li class="media">
               <img class="mr-3 rounded" width="55" src="{{ asset('assets/img/products/product-3-50.png') }}" alt="product">
               <div class="media-body">
                 <div class="float-right"><div class="font-weight-600 text-muted text-small">28 Sales</div></div>
@@ -163,7 +163,7 @@
       </div>
     </div>
   </div>
-  <div class="row">
+  <!-- <div class="row">
     <div class="col-md-6">
       <div class="card">
         <div class="card-header">
@@ -301,7 +301,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <div class="row">
     <div class="col-md-8">
       <div class="card">
@@ -420,5 +420,5 @@
       </div>
     </div>
   </div>
-</section> -->
+</section>
 @endsection
