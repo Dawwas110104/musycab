@@ -17,12 +17,12 @@
               <div class="card-stats-item-label">Total Pemilih</div>
             </div>
             <div class="card-stats-item">
-              <div class="card-stats-item-count">50</div>
+              <div class="card-stats-item-count">75</div>
               <div class="card-stats-item-label">Sudah Memilih</div>
             </div>
 
             <div class="card-stats-item">
-              <div class="card-stats-item-count">25</div>
+              <div class="card-stats-item-count">0</div>
               <div class="card-stats-item-label">Belum Memilih</div>
             </div>
           </div>
@@ -35,12 +35,11 @@
     </div>
   </div>
   
-<!--
   <div class="row">
     <div class="col-lg-8">
       <div class="card">
         <div class="card-header">
-          <h4>Budget vs Sales</h4>
+          <h4>Calon Formatur</h4>
         </div>
         <div class="card-body">
           <canvas id="myChart" height="158"></canvas>
@@ -50,7 +49,7 @@
     <div class="col-lg-4">
       <div class="card gradient-bottom">
         <div class="card-header">
-          <h4>Top 5 Products</h4>
+          <h4>Live Record Suara Formatur</h4>
           <div class="card-header-action dropdown">
             <a href="#" data-toggle="dropdown" class="btn btn-danger dropdown-toggle">Month</a>
             <ul class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
@@ -68,16 +67,16 @@
               <img class="mr-3 rounded" width="55" src="../assets/img/products/product-3-50.png" alt="product">
               <div class="media-body">
                 <div class="float-right"><div class="font-weight-600 text-muted text-small">86 Sales</div></div>
-                <div class="media-title">oPhone S9 Limited</div>
+                <div class="media-title">Joko Widodo</div>
                 <div class="mt-1">
                   <div class="budget-price">
-                    <div class="budget-price-square bg-primary" data-width="64%"></div>
-                    <div class="budget-price-label">$68,714</div>
+                    <div class="budget-price-square bg-primary" data-width="33%"></div>
+                    <div class="budget-price-label">25 Suara</div>
                   </div>
-                  <div class="budget-price">
+                  <!-- <div class="budget-price">
                     <div class="budget-price-square bg-danger" data-width="43%"></div>
                     <div class="budget-price-label">$38,700</div>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </li>
@@ -85,16 +84,16 @@
               <img class="mr-3 rounded" width="55" src="{{ asset('assets/img/products/product-4-50.png') }}" alt="product">
               <div class="media-body">
                 <div class="float-right"><div class="font-weight-600 text-muted text-small">67 Sales</div></div>
-                <div class="media-title">iBook Pro 2018</div>
+                <div class="media-title">Prabowo Subianto</div>
                 <div class="mt-1">
                   <div class="budget-price">
-                    <div class="budget-price-square bg-primary" data-width="84%"></div>
-                    <div class="budget-price-label">$107,133</div>
+                    <div class="budget-price-square bg-primary" data-width="20%"></div>
+                    <div class="budget-price-label">15 Suara</div>
                   </div>
-                  <div class="budget-price">
+                  <!-- <div class="budget-price">
                     <div class="budget-price-square bg-danger" data-width="60%"></div>
                     <div class="budget-price-label">$91,455</div>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </li>
@@ -102,20 +101,20 @@
               <img class="mr-3 rounded" width="55" src="{{ asset('assets/img/products/product-1-50.png') }}" alt="product">
               <div class="media-body">
                 <div class="float-right"><div class="font-weight-600 text-muted text-small">63 Sales</div></div>
-                <div class="media-title">Headphone Blitz</div>
+                <div class="media-title">Ganjar Pranowo</div>
                 <div class="mt-1">
                   <div class="budget-price">
-                    <div class="budget-price-square bg-primary" data-width="34%"></div>
-                    <div class="budget-price-label">$3,717</div>
+                    <div class="budget-price-square bg-primary" data-width="55%"></div>
+                    <div class="budget-price-label">35 Suara</div>
                   </div>
-                  <div class="budget-price">
+                  <!-- <div class="budget-price">
                     <div class="budget-price-square bg-danger" data-width="28%"></div>
                     <div class="budget-price-label">$2,835</div>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </li>
-            <li class="media">
+            <!-- <li class="media">
               <img class="mr-3 rounded" width="55" src="{{ asset('assets/img/products/product-3-50.png') }}" alt="product">
               <div class="media-body">
                 <div class="float-right"><div class="font-weight-600 text-muted text-small">28 Sales</div></div>

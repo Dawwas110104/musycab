@@ -90,12 +90,12 @@
                       <div class="card-stats-item-label">Total Pemilih</div>
                     </div>
                     <div class="card-stats-item">
-                      <div class="card-stats-item-count">50</div>
+                      <div class="card-stats-item-count">75</div>
                       <div class="card-stats-item-label">Sudah Memilih</div>
                     </div>
 
                     <div class="card-stats-item">
-                      <div class="card-stats-item-count">25</div>
+                      <div class="card-stats-item-count">0</div>
                       <div class="card-stats-item-label">Belum Memilih</div>
                     </div>
                   </div>
