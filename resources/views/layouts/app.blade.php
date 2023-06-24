@@ -29,6 +29,16 @@
 </head>
 <body>
     <div id="app">
+        <div class="main-wraper">
+            <div class="navbar-bg"></div>
+            {{-- @include('layouts.navbar')
+            @include('layouts.sidebar')
+            @include('layouts.sidebar') --}}
+
+            <main class="py-4">
+                @yield('content')
+            </main>
+        </div>
         <!-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -79,9 +89,6 @@
             </div>
         </nav> -->
 
-        <main class="py-4">
-            @yield('content')
-        </main>
     </div>
 </body>
 </html>

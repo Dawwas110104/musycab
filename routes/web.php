@@ -20,6 +20,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
+// koneksi DataTables
+Route::get('/admin/formatur/index', [App\Http\Controllers\AdminController::class, 'formatur'])->name('admin.formatur');
+Route::get('/admin/pemilih/index', [App\Http\Controllers\AdminController::class, 'pemilih'])->name('admin.pemilih');
+
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('/admin', AdminController::class);
