@@ -17,14 +17,17 @@
 
     <div class="card">
         <div class="card-header">
-                <div class="col">
+            <div class="row">
+                <div class="col-12">
                     <h4>Data Calon Formatur</h4>
                 </div>
-                <div class="col">
-                    <div class="float-right">
-                        <a href="#" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#tambah">Tambah</a>
-                    </div>
+            </div>
+            <div class="col">
+                <div class="float-right">
+                    <a href="#" class="btn btn-sm btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#tambah">Tambah</a>
                 </div>
+            </div>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -97,11 +100,11 @@
 </div>
 <!-- End Modal Detail -->
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+{{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js"></script>
 <script>
-    $(document).ready(function () {
+    $('.mark-done').on('click', function() {
         $('#table-1').DataTable({
             processing: true,
             serverSide: true,
@@ -117,7 +120,7 @@
             ]
         });
     });
-</script>
+</script> --}}
 
 <script src="{{ asset('assets/js/page/modules-datatables.js') }}"></script>
 @endsection
