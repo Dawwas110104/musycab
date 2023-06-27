@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Auth;
+use App\Models\Formatur;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -89,11 +90,6 @@ class AdminController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function formatur()
-    {
-        return view('admin.formatur');
     }
 
     public function pemilih()
