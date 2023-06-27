@@ -64,10 +64,10 @@
                         @foreach($datas as $data)
                         <tr>
                             <td><?= $no++ ?></td>
-                            <td>{{ $data->nama }}</td>
+                            <td>{{ $data->name }}</td>
                             <td>{{ $data->asal }}</td>
                             <td>{{ $data->username }}</td>
-                            <td>{{ $data->password }}</td>
+                            <td>{{ $data->pass }}</td>
                             <td>
                                 <a href="#" class="btn btn-sm btn-warning">Ubah</a>
                                 <a href="{{ route('pemilih.hapus', $data->id) }}" class="btn btn-sm btn-danger">Hapus</a>

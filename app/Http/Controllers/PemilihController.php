@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\Models\Pemilih;
 use App\Models\User;
@@ -10,7 +11,7 @@ class PemilihController extends Controller
 {
     public function index()
     {
-        $datas = Pemilih::all();
+        $datas = User::where('role_id', 2)->get();
 
         return view('admin.pemilih.index', compact([
             'datas',
@@ -22,18 +23,13 @@ class PemilihController extends Controller
         $username = rand(100000, 999999);
         $password = rand(100000, 999999);
 
-        Pemilih::create([
-            'nama' => $request->nama,
-            'asal' => $request->asal,
-            'username' => $username,
-            'password' => $password,
-        ]);
-
         User::create([
             'name' => $request->nama,
+            'asal' => $request->asal,
             'role_id' => 2,
             'username' => $username,
-            'password' => $password,
+            'pass' => $password,
+            'password' => Hash::make($password),
         ]);
 
         return redirect()->back()->with('status', 'Data berhasil ditambahkan');
@@ -41,7 +37,7 @@ class PemilihController extends Controller
 
     public function destroy($id)
     {
-        Pemilih::where('id', $id)->delete();
+        User::where('id', $id)->delete();
 
         return redirect()->back()->with('status', 'Data berhasil dihapus');
     }
