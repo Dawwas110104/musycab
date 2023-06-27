@@ -18,6 +18,8 @@ class AdminMiddleware
     {
         if (Auth::user()->role_id == 1) {
             return view('admin.index');
+       } else if (Auth::user()->role_id == 2) {
+            return view('guest.index');
        } else {
             return redirect()->route('welcome');
        }

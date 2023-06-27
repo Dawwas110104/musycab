@@ -85,6 +85,17 @@
             </div>
         @endif
 
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
         <div class="card card-primary">
             <div class="card-header"><h4>Login</h4></div>
 
@@ -92,8 +103,8 @@
                 <form method="POST" action="{{ route('login') }}" class="needs-validation" novalidate="">
                     @csrf
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input id="email" type="email" class="form-control" name="email" tabindex="1" required autofocus>
+                        <label for="text">Username</label>
+                        <input id="text" type="text" class="form-control" name="email" tabindex="1" required autofocus>
                         <div class="invalid-feedback">
                             Please fill in your email
                         </div>
