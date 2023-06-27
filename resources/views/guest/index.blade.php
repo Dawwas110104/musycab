@@ -27,6 +27,7 @@
                     </div>
                     <div class="mb-2">Joko Widodo</div>
                     <button class="btn btn-primary" id="toastr-1">Vote</button>
+                    <button class="btn btn-secondary" type="button">Vote</button>
                 </div>
                 <div class="card-body">
                     <ul class="nav nav-pills" id="myTab3" role="tablist">
