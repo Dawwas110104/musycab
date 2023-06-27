@@ -18,6 +18,7 @@ class CreatePemilihsTable extends Migration
             $table->string('nama');
             $table->string('asal');
             $table->string('username');
+            $table->string('pass');
             $table->string('password');
             $table->timestamps();
         });
