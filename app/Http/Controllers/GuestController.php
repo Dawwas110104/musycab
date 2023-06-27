@@ -6,13 +6,12 @@ use Illuminate\Http\Request;
 
 class GuestController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
     public function index()
     {
-        return 'masukkk';
+        return view('guest.index', compact([
+
+        ]));
     }
-}
+    }
+

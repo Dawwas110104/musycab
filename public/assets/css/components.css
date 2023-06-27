@@ -574,8 +574,10 @@ tr:first-child > td > .fc-day-grid-event {
 
 /* 1.13 Gallery */
 .gallery {
-  display: inline-block;
+  display: flex;
   width: 100%;
+  align-items: center;
+  justify-content: center
 }
 .gallery .gallery-item {
   float: left;
