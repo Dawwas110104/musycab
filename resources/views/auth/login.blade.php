@@ -79,42 +79,44 @@
             <img src="{{ asset('assets/img/ipmsepanjang.jpeg') }}" alt="logo" width="100" class="shadow-light rounded-circle">
         </div>
 
+        @if (session('status'))
+            <div class="alert alert-success" role="alert">
+                {{ session('status') }}
+            </div>
+        @endif
+
         <div class="card card-primary">
             <div class="card-header"><h4>Login</h4></div>
 
             <div class="card-body">
-                <form method="POST" action="#" class="needs-validation" novalidate="">
+                <form method="POST" action="{{ route('login') }}" class="needs-validation" novalidate="">
+                    @csrf
                     <div class="form-group">
-                    <label for="email">Email</label>
-                    <input id="email" type="email" class="form-control" name="email" tabindex="1" required autofocus>
-                    <div class="invalid-feedback">
-                        Please fill in your email
-                    </div>
-                    </div>
-
-                    <div class="form-group">
-                    <div class="d-block">
-                        <label for="password" class="control-label">Password</label>
-                        <div class="float-right">
-                        <a href="auth-forgot-password.html" class="text-small">
-                            Forgot Password?
-                        </a>
+                        <label for="email">Email</label>
+                        <input id="email" type="email" class="form-control" name="email" tabindex="1" required autofocus>
+                        <div class="invalid-feedback">
+                            Please fill in your email
                         </div>
                     </div>
-                    <input id="password" type="password" class="form-control" name="password" tabindex="2" required>
-                    <div class="invalid-feedback">
-                        please fill in your password
-                    </div>
+
+                    <div class="form-group">
+                        <div class="d-block">
+                            <label for="password" class="control-label">Password</label>
+                        </div>
+                        <input id="password" type="password" class="form-control" name="password" tabindex="2" required>
+                        <div class="invalid-feedback">
+                            please fill in your password
+                        </div>
                     </div>
 
                     <div class="form-group">
-                        <a href="{{ route('admin.index') }}" class="btn btn-primary btn-lg btn-block">
+                        <!-- <a href="{{ route('admin.index') }}" class="btn btn-primary btn-lg btn-block">
                             Login
-                        </a>
+                        </a> -->
 
-                        <!-- <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
+                        <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
                             Login
-                        </button> -->
+                        </button>
                     </div>
                 </form>
             </div>
