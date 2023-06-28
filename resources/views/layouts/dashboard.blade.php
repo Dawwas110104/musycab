@@ -19,15 +19,17 @@
   @yield('head')
 </head>
 
-<body>
+<body class="@if(Auth::user()->role_id == 2) sidebar-mini @endif">
   <div id="app">
     <div class="main-wrapper">
       <div class="navbar-bg"></div>
       <nav class="navbar navbar-expand-lg main-navbar">
         <form class="form-inline mr-auto">
           <ul class="navbar-nav mr-3">
+            @if(Auth::user()->role_id == 1)
             <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
             <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i class="fas fa-search"></i></a></li>
+            @endif
           </ul>
         </form>
 
@@ -56,6 +58,8 @@
           </li>
         </ul>
       </nav>
+
+      @if(Auth::user()->role_id == 1)
       <div class="main-sidebar sidebar-style-2">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
@@ -81,6 +85,7 @@
             </ul>
         </aside>
       </div>
+      @endif
 
       <!-- Main Content -->
       <div class="main-content">
