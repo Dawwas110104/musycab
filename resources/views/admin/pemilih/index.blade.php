@@ -1,7 +1,12 @@
 @extends('layouts.dashboard')
 
-@section('css')
+@section('head')
+<!-- Data tables -->
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css">
+
+<!-- Sweet Alert 2 -->
+<link rel="stylesheet" href="{{ asset('assets/css/sweetalert2.min.css') }}">
+<script src="{{ asset('assets/js/sweetalert2.all.min.js') }}"></script>
 @endsection
 
 @section('content')
@@ -70,10 +75,13 @@
                             <td>{{ $data->pass }}</td>
                             <td>
                                 <a href="#" class="btn btn-sm btn-warning">Ubah</a>
-                                <a href="{{ route('pemilih.hapus', $data->id) }}" class="btn btn-sm btn-danger">Hapus</a>
+                                <button data-id="{{ $data->id }}" type="button" class="btn btn-sm btn-danger hapus">
+                                    <i class="glyphicon glyphicon-trash"></i> Hapus
+                                </button>
                             </td>
                             <td><a href="#" class="btn btn-sm btn-secondary" data-bs-toggle="modal"
-                                    data-bs-target="#detail_modal">Detail</a></td>
+                                    data-bs-target="#detail_modal">Detail</a>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>
@@ -130,13 +138,57 @@
 <!-- Modal  -->
 @endsection
 
-@push('script')
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $('#table-1').DataTable();
-    });
+@section('js')
+<!-- <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script> -->
+<!-- <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js"></script> -->
+<script type="text/javascript">
+    // $(document).ready(function () {
+    //     $('#table-1').DataTable();
+    // });
+
+    // Sweet Alert 2
+    $('.hapus').click(function(){
+        var id = $(this).data("id");
+        var url = "{{ route('pemilih.hapus',":id") }}",
+        url = url.replace(':id', id);
+
+        console.log(url);
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "It will permanently deleted !",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then(function() {
+            $.ajax({
+                url: url,
+                type: 'POST',
+                data: {
+                            _token: "{{ csrf_token() }}",
+                            id: id
+                        },
+            
+                success: function (){
+                    Swal.fire({
+                        title: 'Deleted!',
+                        text: 'Your file has been deleted.',
+                        type: 'success',
+                        timer: 1000,
+                    });
+                    setTimeout(function(){
+                        location.reload(); // then reload the page.(3)
+                    }, 1000);
+                },
+
+                error: function(){
+                    alert('error');
+                },
+            })
+            
+        })
+    
+    })
 </script>
-@endpush
+@endsection

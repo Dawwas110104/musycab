@@ -31,15 +31,18 @@ Route::middleware(['admin'])->group(function() {
 
     Route::get('/admin/formatur/index', [FormaturController::class, 'index'])->name('formatur.index');
     Route::post('/admin/formatur/tambah', [FormaturController::class, 'create'])->name('formatur.tambah');
-    Route::get('/admin/formatur/hapus/{id}', [FormaturController::class, 'destroy'])->name('formatur.hapus');
-
-
+    Route::post('/admin/formatur/hapus/{id}', [FormaturController::class, 'destroy'])->name('formatur.hapus');
+    
+    
     Route::get('/admin/pemilih/index', [PemilihController::class, 'index'])->name('pemilih.index');
     Route::post('/admin/pemilih/tambah', [PemilihController::class, 'create'])->name('pemilih.tambah');
-    Route::get('/admin/pemilih/hapus/{id}', [PemilihController::class, 'destroy'])->name('pemilih.hapus');
+    Route::post('/admin/pemilih/hapus/{id}', [PemilihController::class, 'destroy'])->name('pemilih.hapus');
 });
 
+// Guest
 Route::get('/guest', [GuestController::class, 'index'])->name('guest.index');
+
+
 
 
 
