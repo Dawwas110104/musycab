@@ -9,6 +9,7 @@
 <script src="{{ asset('assets/js/sweetalert2.all.min.js') }}"></script>
 @endsection
 
+
 @section('content')
 <section class="section">
     <div class="section-header">

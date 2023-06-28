@@ -76,7 +76,7 @@
 
               <li class="menu-header">Data</li>
               <li class="nav-item">
-                <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i> <span>Data User</span></a>
+                <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i><span>Data User</span></a>
                 <ul class="dropdown-menu">
                   <li><a href="{{ route('formatur.index') }}">Data Formatur</a></li>
                   <li><a href="{{ route('pemilih.index') }}">Data Pemilih</a></li>
