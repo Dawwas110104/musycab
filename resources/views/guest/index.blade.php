@@ -28,7 +28,7 @@
     </div> --}}
     <div class="row">
         @foreach($datas as $data)
-        <div class="col-12 col-sm-6 col-lg-3">
+        <div class="col-3 col-sm-6 col-lg-3">
             <div class="card">
                 <div class="card-body text-center">
                     <div class="gallery gallery-md">
@@ -40,24 +40,20 @@
                         <button id="unVote{{$data->id}}" class="btn btn-danger hidden" onclick="unVote({{ $data->id }})">Batalkan Vote</button>
                     </div>
                 </div>
-                <div class="card-body">
-                        <p>
-                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample1{{$data->id}}" aria-expanded="false" aria-controls="collapseExample1{{$data->id}}">
-                            VISI
-                        </button>
-                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample2{{$data->id}}" aria-expanded="false" aria-controls="collapseExample2{{$data->id}}">
-                            MISI
-                        </button>
-                        </p>
-                        <div class="collapse" id="collapseExample1{{$data->id}}">
-                            <p>
+                    <div class="card-body">
+                        <div style="width:100%; text-align:center">
+                            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample1{{$data->id}}" aria-expanded="false" aria-controls="collapseExample1{{$data->id}}">
+                                VISI
+                            </button>
+                            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample2{{$data->id}}" aria-expanded="false" aria-controls="collapseExample2{{$data->id}}">
+                                MISI
+                            </button>
+                        </div>
+                        <div class="collapse" id="collapseExample1{{$data->id}}" style="width:100%; border-bottom: 1px solid #c5c5c5; padding:5px; text-align: justify;">
                             Menjadi Raja Bajak Laut
-                            </p>
-                            </div>
-                            <div class="collapse" id="collapseExample2{{$data->id}}">
-                            <p>
+                        </div>
+                        <div class="collapse" id="collapseExample2{{$data->id}}" style="width:100%; padding:5px;">
                             Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-                            </p>
                         </div>
                     </div>
                 </div>
