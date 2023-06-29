@@ -41,7 +41,6 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <ul class="nav nav-pills" id="myTab3" role="tablist">
                         <p>
                         <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample1{{$data->id}}" aria-expanded="false" aria-controls="collapseExample1{{$data->id}}">
                             VISI
