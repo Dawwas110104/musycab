@@ -60,6 +60,9 @@
             </div>
         </div>
         @endforeach
+        <div class="buttons">
+            <a href="#" class="btn btn-primary">Submit</a>
+        </div>
     </div>
 </section>
 
