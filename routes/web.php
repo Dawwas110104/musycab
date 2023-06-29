@@ -30,11 +30,13 @@ Route::middleware(['admin'])->group(function() {
     Route::resource('/admin', AdminController::class);
 
     Route::get('/admin/formatur/index', [FormaturController::class, 'index'])->name('formatur.index');
+    Route::get('/admin/formatur/detail/{id}', [FormaturController::class, 'detail'])->name('formatur.detail');
     Route::post('/admin/formatur/tambah', [FormaturController::class, 'create'])->name('formatur.tambah');
     Route::post('/admin/formatur/hapus/{id}', [FormaturController::class, 'destroy'])->name('formatur.hapus');
     
     
     Route::get('/admin/pemilih/index', [PemilihController::class, 'index'])->name('pemilih.index');
+    Route::get('/admin/pemilih/detail/{id}', [PemilihController::class, 'detail'])->name('pemilih.detail');
     Route::post('/admin/pemilih/tambah', [PemilihController::class, 'create'])->name('pemilih.tambah');
     Route::post('/admin/pemilih/hapus/{id}', [PemilihController::class, 'destroy'])->name('pemilih.hapus');
 });

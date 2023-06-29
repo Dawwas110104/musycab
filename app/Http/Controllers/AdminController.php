@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Auth;
 use App\Models\Formatur;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\UsersImport;
 
 class AdminController extends Controller
 {

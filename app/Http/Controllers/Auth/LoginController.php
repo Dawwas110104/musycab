@@ -49,6 +49,6 @@ class LoginController extends Controller
         request()->merge([$this->username => $loginValue]);
 
         // dd(property_exists($this, 'username') ? $this->username : 'email');
-        return property_exists($this, 'username') ? $this->username : $this->username;
+        return property_exists($this, 'username') ? $this->username : $this->email;
     }
 }

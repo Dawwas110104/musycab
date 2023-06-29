@@ -51,6 +51,16 @@
                 </div>
             </div>
             <div class="col">
+                <div class="col-3" style="display:relative;">
+                    <form action="{{ route('import') }}" method="post" enctype="multipart/form-data">
+                        @csrf
+                        <input type="file" name="file" class="custom-file-input" placeholder="Recipient's username"
+                            aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <label class="custom-file-label" for="customFile">Choose file</label>
+                        
+                        <button class="btn btn-primary mt-3" type="submit">Import</button>
+                    </form>
+                </div>
                 <div class="float-right">
                     <a href="#" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#tambah" >Tambah</a>
                 </div>
@@ -94,7 +104,7 @@
                                     <i class="glyphicon glyphicon-trash"></i> Hapus
                                 </button>
                             </td>
-                            <td><a href="#" class="btn btn-sm btn-secondary" data-bs-toggle="modal" data-bs-target="#detail_modal">Detail</a></td>
+                            <td><a href="{{ route('formatur.detail', $data->id) }}" class="btn btn-sm btn-secondary" data-bs-toggle="modal" data-bs-target="#detail_modal">Detail</a></td>
                         </tr>
                         @endforeach
                     </tbody>

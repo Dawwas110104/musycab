@@ -46,4 +46,14 @@ class FormaturController extends Controller
 
         return redirect()->route('formatur.index')->with('status', 'Data berhasil dihapus!');
     }
+
+    public function detail($id)
+    {
+        $data = Formatur::where('id', $id)->first();
+
+        // return $data;
+        return view('admin.formatur.detail', compact(
+            'data'
+        ));
+    }
 }

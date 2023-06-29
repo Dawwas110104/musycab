@@ -2,7 +2,7 @@
 
 namespace App\Imports;
 
-use App\Models\Pemilih;
+use App\Models\Formatur;
 use Maatwebsite\Excel\Concerns\ToModel;
 
 class UsersImport implements ToModel
@@ -14,8 +14,8 @@ class UsersImport implements ToModel
     */
     public function model(array $row)
     {
-        return new Pemilih([
-            //
+        return new Formatur([
+            'nama' =>$row[0],
         ]);
     }
 }
