@@ -48,6 +48,7 @@
             <div class="col">
                 <div class="float-right">
                     <a href="#" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#tambah">Tambah</a>
+                    <a href="#" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#tambah">Tambah</a>
                 </div>
             </div>
         </div>

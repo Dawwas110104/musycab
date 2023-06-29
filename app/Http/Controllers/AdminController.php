@@ -96,4 +96,11 @@ class AdminController extends Controller
     {
         return view('admin.pemilih');
     }
+
+    public function import()
+    {
+        Excel::import(new UsersImport,request()->file('file'));
+
+        return redirect()->back();
+    }
 }
