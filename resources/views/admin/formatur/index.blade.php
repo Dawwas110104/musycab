@@ -84,7 +84,7 @@
                                         title="Just an example">
                                         <div data-crop-image="100">
                                             <img alt="image" src="{{ asset('image/' . $data->image) }}"
-                                                class="img-fluid">
+                                                class="img-fluid" style="max-width: 100px; max-height:100px;">
                                         </div>
                                     </a>
                                 </div>
