@@ -47,6 +47,10 @@
             </div>
             <div class="col">
                 <div class="float-right">
+                    <div style="position: relative; display: inline-block;">
+                        <input name="foto" type="file" class="custom-file-input btn-primary" id="customFile" required>
+                        <label class="custom-file-label" for="customFile">Import Data</label>
+                    </div>
                     <a href="#" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#tambah">Tambah</a>
                 </div>
             </div>

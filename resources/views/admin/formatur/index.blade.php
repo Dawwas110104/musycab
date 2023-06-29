@@ -140,8 +140,8 @@
                     <label for="foto" class="col-sm-3 col-form-label">Foto</label>
                     <div class="col-sm-9">
                         <div class="custom-file">
-                        <input name="foto" type="file" class="custom-file-input" id="customFile" required>
-                        <label class="custom-file-label" for="customFile">Pilih File</label>
+                            <input name="foto" type="file" class="custom-file-input" id="customFile" required>
+                            <label class="custom-file-label" for="customFile">Pilih File</label>
                         </div>
                     </div>
                 </div>
