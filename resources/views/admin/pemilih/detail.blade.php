@@ -12,17 +12,6 @@
 
     <div class="section-body">
         <div class="row mt-sm-4">
-            <div class="col-12 col-md-12 col-lg-5">
-            <div class="card profile-widget">
-                <div class="profile-widget-header">
-                    <img alt="image" src="{{ asset('/image/'. $data->image) }}" class="profile-widget-picture">
-                </div>
-                <div class="profile-widget-description">
-                <div class="profile-widget-name">{{ $data->nama }}</div>
-                deskripsi visi misi
-                </div>
-            </div>
-            </div>
             <div class="col-12 col-md-12 col-lg-7">
             <div class="card">
                 <form method="post" class="needs-validation" novalidate="">

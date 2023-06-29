@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Auth;
 use App\Models\Formatur;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\UsersImport;
 
 class AdminController extends Controller
 {
@@ -95,5 +97,12 @@ class AdminController extends Controller
     public function pemilih()
     {
         return view('admin.pemilih');
+    }
+
+    public function import()
+    {
+        Excel::import(new UsersImport,request()->file('file'));
+
+        return redirect()->back();
     }
 }

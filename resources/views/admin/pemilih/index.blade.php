@@ -84,7 +84,7 @@
                                     <i class="glyphicon glyphicon-trash"></i> Hapus
                                 </button>
                             </td>
-                            <td><a href="#" class="btn btn-sm btn-secondary" data-bs-toggle="modal"
+                            <td><a href="{{ route('pemilih.detail', $data->id) }}" class="btn btn-sm btn-secondary" data-bs-toggle="modal"
                                     data-bs-target="#detail_modal">Detail</a>
                             </td>
                         </tr>

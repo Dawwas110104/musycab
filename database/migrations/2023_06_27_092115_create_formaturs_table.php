@@ -16,9 +16,9 @@ class CreateFormatursTable extends Migration
         Schema::create('formaturs', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('visi');
-            $table->string('misi');
-            $table->string('image');
+            $table->string('visi')->nullable();
+            $table->string('misi')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

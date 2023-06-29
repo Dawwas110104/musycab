@@ -41,4 +41,14 @@ class PemilihController extends Controller
 
         return redirect()->back()->with('status', 'Data berhasil dihapus');
     }
+    
+    public function detail($id)
+    {
+        $data = Pemilih::where('id', $id)->first();
+
+        // return $data;
+        return view('admin.pemilih.detail', compact(
+            'data'
+        ));
+    }
 }
