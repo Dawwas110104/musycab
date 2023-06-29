@@ -47,10 +47,10 @@
             </div>
             <div class="col">
                 <div class="float-right">
-                    <div style="position: relative; display: inline-block;">
-                        <input name="foto" type="file" class="custom-file-input btn-primary" id="customFile" required>
-                        <label class="custom-file-label" for="customFile">Import Data</label>
-                    </div>
+                    <button class="btn btn-secondary" type="submit" data-toggle="modal"
+                    data-target="#import">Import</button>
+                    <button class="btn btn-secondary" type="submit" data-toggle="modal"
+                    data-target="#Export">Export</button>
                     <a href="#" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#tambah">Tambah</a>
                 </div>
             </div>
@@ -97,6 +97,64 @@
     </div>
 
 </section>
+{{-- Modal Import --}}
+<div class="modal fade" id="import" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Import Data Calon Formatur</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-10" style="display:relative;">
+                    <form action="{{ route('import') }}" method="post" enctype="multipart/form-data">
+                        @csrf
+                        <div style="position: relative; display: inline-block;">
+                            <input name="foto" type="file" class="custom-file-input btn-primary" id="customFile" required>
+                            <label class="custom-file-label" for="customFile">Import Data</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Import</button>
+            </div>
+        </div>
+    </div>
+</div>
+{{-- End Modal Import --}}
+
+{{-- Modal Export --}}
+<div class="modal fade" id="Export" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Import Data Calon Formatur</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-10" style="display:relative;">
+                    <form action="{{ route('import') }}" method="post" enctype="multipart/form-data">
+                        @csrf
+                        <input type="file" name="file" class="custom-file-input" placeholder="Recipient's username"
+                            aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <label class="custom-file-label" for="customFile">Choose file</label>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Import</button>
+            </div>
+        </div>
+    </div>
+</div>
+{{-- End Modal Export --}}
 
 <!-- Modal Tambah -->
 <div class="modal fade" id="tambah" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
