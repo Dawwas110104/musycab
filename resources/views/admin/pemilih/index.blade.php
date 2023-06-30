@@ -47,9 +47,9 @@
             </div>
             <div class="col">
                 <div class="float-right">
-                    <button class="btn btn-secondary" type="submit" data-toggle="modal"
+                    <button class="btn btn-warning" type="submit" data-toggle="modal"
                     data-target="#import">Import</button>
-                    <button class="btn btn-secondary" type="submit" data-toggle="modal"
+                    <button class="btn btn-warning" type="submit" data-toggle="modal"
                     data-target="#Export">Export</button>
                     <a href="#" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#tambah">Tambah</a>
                 </div>
@@ -66,7 +66,7 @@
                             <th>Username</th>
                             <th>Password</th>
                             <th>Action</th>
-                            <th>Detail</th>
+                            <th>Status</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -79,13 +79,13 @@
                             <td>{{ $data->username }}</td>
                             <td>{{ $data->pass }}</td>
                             <td>
-                                <a href="#" class="btn btn-sm btn-warning">Ubah</a>
                                 <button data-id="{{ $data->id }}" type="button" class="btn btn-sm btn-danger hapus">
                                     <i class="glyphicon glyphicon-trash"></i> Hapus
                                 </button>
                             </td>
-                            <td><a href="{{ route('pemilih.detail', $data->id) }}" class="btn btn-sm btn-secondary" data-bs-toggle="modal"
-                                    data-bs-target="#detail_modal">Detail</a>
+                            <td>
+                                <div class="badge badge-success">Active</div>
+                                <div class="badge badge-danger">Not Active</div>
                             </td>
                         </tr>
                         @endforeach

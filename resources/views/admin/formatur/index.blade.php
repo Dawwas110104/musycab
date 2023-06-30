@@ -63,13 +63,9 @@
                 <table class="table table-striped dt-responsive nowrap datatables py-1 px-1" id="table-1">
                     <thead>
                         <tr>
-                            <th>No</th>
-                            <th>Nama</th>
-                            <th>Foto</th>
-                            <th>Visi</th>
-                            <th>Misi</th>
+                            <th style="width: 5%">No</th>
+                            <th style="width: 70%">Nama</th>
                             <th>Action</th>
-                            <th>Detail</th>
                         </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
@@ -79,27 +75,12 @@
                             <td><?= $no++ ?></td>
                             <td>{{ $data->nama }}</td>
                             <td>
-                                <div id="chocolat-parent" class="chocolat-parent">
-                                    <a href="{{ asset('image/' . $data->image) }}" class="chocolat-image"
-                                        title="Just an example">
-                                        <div data-crop-image="100">
-                                            <img alt="image" src="{{ asset('image/' . $data->image) }}"
-                                                class="img-fluid" style="max-width: 100px; max-height:100px;">
-                                        </div>
-                                    </a>
-                                </div>
-                                <!-- <img alt="image" src="{{ asset('image/' . $data->image) }}" width="35" data-toggle="tooltip" title="{{ $data->nama }}"> -->
-                            </td>
-                            <td>{{ $data->visi }}</td>
-                            <td>{{ $data->misi }}</td>
-                            <td>
-                                <a href="#" class="btn btn-sm btn-warning">Ubah</a>
+                                <a href="{{ route('formatur.detail', $data->id) }}" class="btn btn-sm btn-info"
+                                        data-bs-toggle="modal" data-bs-target="#detail_modal">Detail</a>
                                 <button data-id="{{ $data->id }}" type="button" class="btn btn-sm btn-danger hapus">
                                     <i class="glyphicon glyphicon-trash"></i> Hapus
                                 </button>
                             </td>
-                            <td><a href="{{ route('formatur.detail', $data->id) }}" class="btn btn-sm btn-secondary"
-                                    data-bs-toggle="modal" data-bs-target="#detail_modal">Detail</a></td>
                         </tr>
                         @endforeach
                     </tbody>

@@ -1,24 +1,27 @@
 @extends('layouts.dashboard')
 
 @section('head')
-    <style>
-        .hidden {
-            display: none;
-        }
-    </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css">
+<style>
+    .hidden {
+        display: none;
+    }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css">
 @endsection
 
 @section('content')
 <section class="section">
-    <div class="section-header">
-        <h1>E-Vote IPM Sepanjang</h1>
-        <div class="section-header-breadcrumb">
-            <div class="breadcrumb-item" style="color:#6a77e7"><h6>Pilih Calon Formatur</h6></div>
-        </div>
-    </div>
-
     <form action="{{ route('guest.pilih') }}" method="POST">
+        <div class="section-header">
+            <h1>E-Vote IPM Sepanjang</h1>
+            <div class="col">
+                <div class="float-right">
+                    <button id="toastr" type="button" class="btn btn-primary" onclick="toast()">Submit</button>
+                    <button id="submitVote" type="submit" class="btn btn-primary hidden" disabled>Submit</button>
+                </div>
+            </div>
+        </div>
+
         @csrf
         <div class="row">
             @foreach($datas as $data)
@@ -26,25 +29,35 @@
                 <div class="card">
                     <div class="card-body text-center">
                         <div class="gallery gallery-md">
-                            <div class="gallery-item" style="margin: 0px;" data-toggle="modal" data-target="#foto{{ $data->id }}" data-image="{{ asset('image/' . $data->image) }}" data-title="Image 1"></div>
+                            <div class="gallery-item" style="margin: 0px;" data-toggle="modal"
+                                data-target="#foto{{ $data->id }}" data-image="{{ asset('image/' . $data->image) }}"
+                                data-title="Image 1"></div>
                         </div>
                         <div class="mb-2">{{ $data->nama }}</div>
                         <div>
-                            <input id="pilihan{{ $data->id }}" type="checkbox" class="hidden" name="category[]" value="{{ $data->id }}">
-                            <button id="vote{{$data->id}}" type="button" class="btn btn-success" onclick="vote({{ $data->id }}); checkSelected();">Vote</button>
-                            <button id="unVote{{$data->id}}" type="button" class="btn btn-danger hidden" onclick="unVote({{ $data->id }}); checkSelected();">Batalkan Vote</button>
+                            <input id="pilihan{{ $data->id }}" type="checkbox" class="hidden" name="category[]"
+                                value="{{ $data->id }}">
+                            <button id="vote{{$data->id}}" type="button" class="btn btn-success"
+                                onclick="vote({{ $data->id }}); checkSelected();">Vote</button>
+                            <button id="unVote{{$data->id}}" type="button" class="btn btn-danger hidden"
+                                onclick="unVote({{ $data->id }}); checkSelected();">Batalkan Vote</button>
                         </div>
                     </div>
                     <div class="card-body">
                         <div style="width:100%; text-align:center">
-                            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample1{{$data->id}}" aria-expanded="false" aria-controls="collapseExample1{{$data->id}}">
+                            <button class="btn btn-primary" type="button" data-toggle="collapse"
+                                data-target="#collapseExample1{{$data->id}}" aria-expanded="false"
+                                aria-controls="collapseExample1{{$data->id}}">
                                 VISI
                             </button>
-                            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample2{{$data->id}}" aria-expanded="false" aria-controls="collapseExample2{{$data->id}}">
+                            <button class="btn btn-primary" type="button" data-toggle="collapse"
+                                data-target="#collapseExample2{{$data->id}}" aria-expanded="false"
+                                aria-controls="collapseExample2{{$data->id}}">
                                 MISI
                             </button>
                         </div>
-                        <div class="collapse" id="collapseExample1{{$data->id}}" style="width:100%; border-bottom: 1px solid #c5c5c5; padding:5px; text-align: justify;">
+                        <div class="collapse" id="collapseExample1{{$data->id}}"
+                            style="width:100%; border-bottom: 1px solid #c5c5c5; padding:5px; text-align: justify;">
                             {{ $data->visi }}
                         </div>
                         <div class="collapse" id="collapseExample2{{$data->id}}" style="width:100%; padding:5px;">
@@ -55,12 +68,7 @@
             </div>
             @endforeach
         </div>
-        <div class="float-right">
-            <button id="toastr" type="button" class="btn btn-primary" onclick="toast()">Submit</button>
-            <button id="submitVote" type="submit" class="btn btn-primary hidden" disabled>Submit</button>
-        </div>
     </form>
-    
 </section>
 
 {{-- Modal Foto --}}
@@ -75,7 +83,8 @@
                 </button>
             </div>
             <div class="modal-body">
-                <img class="gallery-item" src="{{ asset('image/' . $data->image) }}" style="max-width: 350px; max-height:350px;">
+                <img class="gallery-item" src="{{ asset('image/' . $data->image) }}"
+                    style="max-width: 350px; max-height:350px;">
             </div>
         </div>
     </div>
@@ -84,54 +93,54 @@
 @endsection
 
 @section('js')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js"></script>
-    <script>
-        function vote(id){
-            document.getElementById("vote" + id).classList.add("hidden");  // Add a highlight class
-            document.getElementById("unVote" + id).classList.remove("hidden");  // Add a highlight class
+<script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js"></script>
+<script>
+    function vote(id) {
+        document.getElementById("vote" + id).classList.add("hidden"); // Add a highlight class
+        document.getElementById("unVote" + id).classList.remove("hidden"); // Add a highlight class
 
-            document.getElementById('pilihan' + id).checked=true; 
-        }  
-        
-        function unVote(id){
-            document.getElementById("vote" + id).classList.remove("hidden");  // Add a highlight class
-            document.getElementById("unVote" + id).classList.add("hidden");  // Add a highlight class
+        document.getElementById('pilihan' + id).checked = true;
+    }
 
-            document.getElementById('pilihan' + id).checked=false;
-        }
-        
-        //Menghitung
-        function checkSelected() {
-            var checkboxes = document.getElementsByName('category[]');
-            var count = 0;
+    function unVote(id) {
+        document.getElementById("vote" + id).classList.remove("hidden"); // Add a highlight class
+        document.getElementById("unVote" + id).classList.add("hidden"); // Add a highlight class
 
-            for (var i = 0; i < checkboxes.length; i++) {
-                if (checkboxes[i].checked) {
-                    count++;
-                }
+        document.getElementById('pilihan' + id).checked = false;
+    }
+
+    //Menghitung
+    function checkSelected() {
+        var checkboxes = document.getElementsByName('category[]');
+        var count = 0;
+
+        for (var i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i].checked) {
+                count++;
             }
-
-            var submitButton = document.getElementById('submitVote');
-
-            if (count === 7) {
-                submitButton.disabled = false;
-                document.getElementById("toastr").classList.add("hidden");
-                document.getElementById("submitVote").classList.remove("hidden");
-            } else {
-                submitButton.disabled = true;
-                document.getElementById("toastr").classList.remove("hidden");
-                document.getElementById("submitVote").classList.add("hidden");
-            }
-
-            console.log(count);
         }
 
-        function toast(){
-            iziToast.warning({
-                title: 'Error',
-                message: 'Pilihlah 7 Calon Formatur!',
-                position: 'topCenter',
-            });
+        var submitButton = document.getElementById('submitVote');
+
+        if (count === 7) {
+            submitButton.disabled = false;
+            document.getElementById("toastr").classList.add("hidden");
+            document.getElementById("submitVote").classList.remove("hidden");
+        } else {
+            submitButton.disabled = true;
+            document.getElementById("toastr").classList.remove("hidden");
+            document.getElementById("submitVote").classList.add("hidden");
         }
-    </script>
+
+        console.log(count);
+    }
+
+    function toast() {
+        iziToast.warning({
+            title: 'Error',
+            message: 'Pilihlah 7 Calon Formatur!',
+            position: 'topCenter',
+        });
+    }
+</script>
 @endsection
