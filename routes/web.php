@@ -43,6 +43,8 @@ Route::middleware(['admin'])->group(function() {
 
 // Guest
 Route::get('/guest', [GuestController::class, 'index'])->name('guest.index');
+Route::post('/guest/pilih', [GuestController::class, 'pilih'])->name('guest.pilih');
+Route::get('/guest/terimakasih', [GuestController::class, 'terimakasih'])->name('terimakasih');
 
 Route::post('/import', [AdminController::class, 'import'])->name('import');
 
