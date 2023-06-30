@@ -245,8 +245,6 @@
                     _token: "{{ csrf_token() }}",
                     id: id
                 },
-        
-
                 success: function () {
                     Swal.fire({
                         title: 'Deleted!',

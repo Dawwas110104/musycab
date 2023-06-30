@@ -727,7 +727,7 @@ select.form-control:not([size]):not([multiple]) {
 .card {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
   background-color: #fff;
-  border-radius: 3px;
+  border-radius: 10px;
   border: none;
   position: relative;
   margin-bottom: 30px;
@@ -735,6 +735,7 @@ select.form-control:not([size]):not([multiple]) {
 .card .card-header, .card .card-body, .card .card-footer {
   background-color: transparent;
   padding: 20px 25px;
+  border-radius: 10px;
 }
 .card .navbar {
   position: static;
@@ -2904,7 +2905,7 @@ pre {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
   background-color: #fff;
-  border-radius: 3px;
+  border-radius: 10px;
   border: none;
   position: relative;
   margin-bottom: 30px;

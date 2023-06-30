@@ -29,11 +29,11 @@
                 <div class="card">
                     <div class="card-body text-center">
                         <div class="gallery gallery-md">
-                            <div class="gallery-item" style="margin: 0px;" data-toggle="modal"
+                            <div class="gallery-item" style="margin: 0px 0px 15px 0px" data-toggle="modal"
                                 data-target="#foto{{ $data->id }}" data-image="{{ asset('image/' . $data->image) }}"
                                 data-title="Image 1"></div>
                         </div>
-                        <div class="mb-2">{{ $data->nama }}</div>
+                        <div class="mb-2" style="padding: 3px"><h6>{{ $data->nama }}</h6></div>
                         <div>
                             <input id="pilihan{{ $data->id }}" type="checkbox" class="hidden" name="category[]"
                                 value="{{ $data->id }}">
@@ -43,7 +43,7 @@
                                 onclick="unVote({{ $data->id }}); checkSelected();">Batalkan Vote</button>
                         </div>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body" style="padding-top: 0px;">
                         <div style="width:100%; text-align:center">
                             <button class="btn btn-primary" type="button" data-toggle="collapse"
                                 data-target="#collapseExample1{{$data->id}}" aria-expanded="false"
