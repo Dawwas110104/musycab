@@ -64,7 +64,7 @@
       <div class="main-sidebar sidebar-style-2">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="index.html">Evote IPM Sepanjang</a>
+            <a href="index.html">Evote PC IPM Sepanjang</a>
           </div>
           <div class="sidebar-brand sidebar-brand-sm">
             <a href="index.html">IPM</a>
@@ -87,7 +87,7 @@
         </aside>
       </div>
       @endif
-
+      
       <!-- Main Content -->
       <div class="main-content">
         @yield('header')

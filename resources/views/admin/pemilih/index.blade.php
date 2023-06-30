@@ -49,7 +49,7 @@
                 <div class="float-right">
                     <button class="btn btn-success" type="submit" data-toggle="modal"
                     data-target="#import">Import</button>
-                    <button class="btn btn-danger" type="submit" data-toggle="modal"
+                    <button class="btn btn-sm btn-info" type="submit" data-toggle="modal"
                     data-target="#Export">Export</button>
                     <a href="#" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#tambah">Tambah</a>
                 </div>
@@ -191,7 +191,7 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             <button type="submit" class="btn btn-primary">Save changes</button>
         </div>
       </form>
