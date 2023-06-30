@@ -12,8 +12,8 @@
 @section('content')
 <section class="section">
     <form action="{{ route('guest.pilih') }}" method="POST">
-        <div class="section-header">
-            <h1>E-Vote IPM Sepanjang</h1>
+        <div class="section-header" style="color:#262626">
+            <h1  style="color:#262626">E-Vote IPM Sepanjang</h1>
             <div class="col">
                 <div class="float-right">
                     <button id="toastr" type="button" class="btn btn-primary" onclick="toast()">Submit</button>
