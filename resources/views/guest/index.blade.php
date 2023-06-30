@@ -11,18 +11,16 @@
 
 @section('content')
 <section class="section">
-<form action="{{ route('guest.pilih') }}" method="POST">
-    @csrf
-    <div class="section-header">
-        <h1  style="color: #262626!important">E-Vote IPM Sepanjang</h1>
-        <div class="section-header-breadcrumb">
-            <div class="float-right">
-    
-            <button id="toastr" type="button" class="btn btn-primary" onclick="toast()">Submit</button>
-            <button id="submitVote" type="submit" class="btn btn-primary hidden" disabled>Submit</button>
+    <form action="{{ route('guest.pilih') }}" method="POST">
+        <div class="section-header">
+            <h1>E-Vote IPM Sepanjang</h1>
+            <div class="col">
+                <div class="float-right">
+                    <button id="toastr" type="button" class="btn btn-primary" onclick="toast()">Submit</button>
+                    <button id="submitVote" type="submit" class="btn btn-primary hidden" disabled>Submit</button>
+                </div>
             </div>
         </div>
-    </div>
 
         <div class="row">
             @foreach($datas as $data)
