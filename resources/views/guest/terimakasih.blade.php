@@ -35,10 +35,20 @@
                             <div class="empty-state-icon bg-success">
                                 <i class="fas fa-check"></i>
                             </div>
-                            <h2>Terimakasih</h2>
+                            <h2>Terima kasih!</h2>
                             <p class="lead">
-                                Semoga Cabang Sepanjang Dapat melanjutkan tongkat estafet perjuangan lebih baik lagi
+                                Semoga PC IPM Sepanjang dapat melanjutkan tongkat estafet perjuangan yang lebih baik lagi.
                             </p>
+                              <div>
+                                <a class="dropdown-item has-icon btn-danger" href="{{ route('logout') }}"  style="color:#fff"
+                                  onclick="event.preventDefault();
+                                  document.getElementById('logout-form').submit();">
+                                <i class="fas fa-sign-out-alt"></i>Logout
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                              </div>
                             </div>
                         </div>
                     </div>
