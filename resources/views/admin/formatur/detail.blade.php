@@ -17,48 +17,47 @@
             <div class="card profile-widget">
             </div>
         </div> --}}
-            <div class="card">
-                <div class="row">
-                    <div class="col-12">
+        <div class="card">
+            <div class="row">
+                <div class="col-12">
                     <div class="card-header">
                         <h4>Detail Calon Formatur</h4>
                     </div>
                 </div>
-                    <div class="col-5 text-center">
-                        <div class="gallery gallery-md">
-                            <div class="gallery-item" style="
+                <div class="col-5 text-center">
+                    <div class="gallery gallery-md">
+                        <div class="gallery-item" style="
                         margin-top: 30px;
                         margin-right: 0px;
                         margin-bottom: 0px;
                         margin-left: 0px;
                         width: 300px; height: 300px;" data-toggle="modal" data-target="#foto{{ $data->id }}"
-                                data-image="{{ asset('image/' . $data->image) }}" data-title="Image 1"></div>
-                        </div>
-                    </div>
-                    <div class="col-7">
-                        <form>
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <label>Nama</label>
-                                    <input type="text" class="form-control" required="" value="{{ $data->nama }}">
-                                </div>
-                                <div class="form-group mb-0">
-                                    <label>Visi</label>
-                                    <textarea class="form-control" required="">{{ $data->visi }}</textarea>
-                                </div>
-                                <div class="form-group mb-0">
-                                    <label>Misi</label>
-                                    <textarea class="form-control" required="">{{ $data->visi }}</textarea>
-                                </div>
-                            </div>
-                            <div class="card-footer text-right">
-                                <button class="btn btn-primary">Save Changes</button>
-                            </div>
-                        </form>
+                            data-image="{{ asset('image/' . $data->image) }}" data-title="Image 1"></div>
                     </div>
                 </div>
+                <div class="col-7">
+                    <form>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label>Nama</label>
+                                <input type="text" class="form-control" required="" value="{{ $data->nama }}">
+                            </div>
+                            <div class="form-group mb-0">
+                                <label>Visi</label>
+                                <textarea class="form-control" required="">{{ $data->visi }}</textarea>
+                            </div>
+                            <div class="form-group mb-0">
+                                <label>Misi</label>
+                                <textarea class="form-control" required="">{{ $data->visi }}</textarea>
+                            </div>
+                        </div>
+                        <div class="card-footer text-right">
+                            <button class="btn btn-primary">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-    </div>
+        </div>
     </div>
 </section>
 @endsection
