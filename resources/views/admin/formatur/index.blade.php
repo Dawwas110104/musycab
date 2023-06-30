@@ -181,8 +181,8 @@
 <!-- <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js"></script> -->
 
-<script src="{{ asset('assets/js/jquery.chocolat.min.js') }}"></script>
-<script src="{{ asset('assets/js/page/modules-datatables.js') }}"></script>
+{{-- <script src="{{ asset('assets/js/jquery.chocolat.min.js') }}"></script> --}}
+{{-- <script src="{{ asset('assets/js/page/modules-datatables.js') }}"></script> --}}
 
 <script>
     $('.mark-done').on('click', function () {
@@ -225,10 +225,10 @@
     // Sweet Alert 2
     $('.hapus').click(function () {
         var id = $(this).data("id");
-        var url = "{{ route('formatur.hapus',": id ") }}",
+        var url = "{{ route('formatur.hapus',":id") }}",
             url = url.replace(':id', id);
 
-        console.log(url);
+        console.log(id);
         Swal.fire({
             title: 'Are you sure?',
             text: "It will permanently deleted !",
@@ -245,6 +245,7 @@
                     _token: "{{ csrf_token() }}",
                     id: id
                 },
+        
 
                 success: function () {
                     Swal.fire({
