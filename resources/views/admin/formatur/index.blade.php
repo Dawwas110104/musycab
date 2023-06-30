@@ -47,14 +47,14 @@
         <div class="card-header">
             <div class="row">
                 <div class="col-12">
-                    <h4>Data Calon Formatur</h4>
+                    <h4 style="color:#262626">Data Calon Formatur</h4>
                 </div>
             </div>
             <div class="col">
                 <div class="float-right">
-                    <button class="btn btn-secondary" type="submit" data-toggle="modal"
+                    <button class="btn btn-success" type="submit" data-toggle="modal"
                         data-target="#import">Import</button>
-                    <a href="#" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#tambah">Tambah</a>
+                    <a href="#" class="btn btn-sm btn-primary" style="color:#262626" data-toggle="modal" data-target="#tambah">Tambah</a>
                 </div>
             </div>
         </div>
