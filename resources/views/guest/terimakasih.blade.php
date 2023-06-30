@@ -40,16 +40,14 @@
                                 Semoga PC IPM Sepanjang dapat melanjutkan tongkat estafet perjuangan yang lebih baik lagi.
                             </p>
                               <div>
-                              <a class="dropdown-item has-icon text-danger" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">
-                                <i class="fas fa-sign-out-alt"></i> Logout
-                              </a>
-                              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                  @csrf
-                              </form>
-                                <!-- <button id="toastr" type="button" class="btn btn-primary" onclick="toast()">Submit</button> -->
-                                <!-- <button id="submitVote" type="submit" class="btn btn-danger hidden">Logout</button> -->
+                                <a class="dropdown-item has-icon btn-danger" href="{{ route('logout') }}"  style="color:#fff"
+                                  onclick="event.preventDefault();
+                                  document.getElementById('logout-form').submit();">
+                                <i class="fas fa-sign-out-alt"></i>Logout
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
                               </div>
                             </div>
                         </div>
