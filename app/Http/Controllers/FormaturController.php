@@ -44,7 +44,9 @@ class FormaturController extends Controller
     {
         Formatur::where('id', $id)->delete();
 
-        return redirect()->route('formatur.index')->with('status', 'Data berhasil dihapus!');
+        return $id;
+
+        return redirect()->back()->with('status', 'Data berhasil dihapus');
     }
 
     public function detail($id)
