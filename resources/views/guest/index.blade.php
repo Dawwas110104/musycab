@@ -12,9 +12,12 @@
 @section('content')
 <section class="section">
     <div class="section-header">
-        <h1>E-Vote IPM Sepanjang</h1>
+        <h1  style="color: #262626!important">E-Vote IPM Sepanjang</h1>
         <div class="section-header-breadcrumb">
-            <div class="breadcrumb-item" style="color:#6a77e7"><h6>Pilih Calon Formatur</h6></div>
+        <div class="float-right">
+            <button id="toastr" type="button" class="btn btn-primary" onclick="toast()">Submit</button>
+            <button id="submitVote" type="submit" class="btn btn-primary hidden" disabled>Submit</button>
+        </div>
         </div>
     </div>
 
@@ -54,10 +57,6 @@
                 </div>
             </div>
             @endforeach
-        </div>
-        <div class="float-right">
-            <button id="toastr" type="button" class="btn btn-primary" onclick="toast()">Submit</button>
-            <button id="submitVote" type="submit" class="btn btn-primary hidden" disabled>Submit</button>
         </div>
     </form>
     
