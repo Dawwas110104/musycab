@@ -16,8 +16,8 @@
             <h1  style="color:#262626">E-Vote IPM Sepanjang</h1>
             <div class="col">
                 <div class="float-right">
-                    <button id="toastr" type="button" class="btn btn-primary" onclick="toast()">Submit</button>
-                    <button id="submitVote" type="submit" class="btn btn-primary hidden" disabled>Submit</button>
+                    <button id="toastr" type="button" class="btn btn-success" onclick="toast()">Submit</button>
+                    <button id="submitVote" type="submit" class="btn btn-success hidden" disabled>Submit</button>
                 </div>
             </div>
         </div>
