@@ -14,17 +14,7 @@
     <div class="section-header">
         <h1>E-Vote IPM Sepanjang</h1>
         <div class="section-header-breadcrumb">
-            <div class="breadcrumb-item"><a>Pilih Calon Formatur</a></div>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-header">
-            <div class="row">
-                <div class="col-12">
-                    <h4>Pilih Calon Formatur</h4>
-                </div>
-            </div>
+            <div class="breadcrumb-item" style="color:#6a77e7"><h6>Pilih Calon Formatur</h6></div>
         </div>
     </div>
 
@@ -36,7 +26,7 @@
                 <div class="card">
                     <div class="card-body text-center">
                         <div class="gallery gallery-md">
-                            <div class="gallery-item" data-toggle="modal" data-target="#foto{{ $data->id }}" data-image="{{ asset('image/' . $data->image) }}" data-title="Image 1"></div>
+                            <div class="gallery-item" style="margin: 0px;" data-toggle="modal" data-target="#foto{{ $data->id }}" data-image="{{ asset('image/' . $data->image) }}" data-title="Image 1"></div>
                         </div>
                         <div class="mb-2">{{ $data->nama }}</div>
                         <div>
