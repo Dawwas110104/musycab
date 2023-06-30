@@ -11,33 +11,19 @@
 
 @section('content')
 <section class="section">
-<<<<<<< HEAD
-    <form action="{{ route('guest.pilih') }}" method="POST">
-        <div class="section-header">
-            <h1>E-Vote IPM Sepanjang</h1>
-            <div class="col">
-                <div class="float-right">
-                    <button id="toastr" type="button" class="btn btn-primary" onclick="toast()">Submit</button>
-                    <button id="submitVote" type="submit" class="btn btn-primary hidden" disabled>Submit</button>
-                </div>
-            </div>
-=======
+<form action="{{ route('guest.pilih') }}" method="POST">
+    @csrf
     <div class="section-header">
         <h1  style="color: #262626!important">E-Vote IPM Sepanjang</h1>
         <div class="section-header-breadcrumb">
             <div class="float-right">
-    <form action="{{ route('guest.pilih') }}" method="POST">
-    @csrf
+    
             <button id="toastr" type="button" class="btn btn-primary" onclick="toast()">Submit</button>
             <button id="submitVote" type="submit" class="btn btn-primary hidden" disabled>Submit</button>
+            </div>
         </div>
->>>>>>> kepinsaurus
-        </div>
+    </div>
 
-<<<<<<< HEAD
-        @csrf
-=======
->>>>>>> kepinsaurus
         <div class="row">
             @foreach($datas as $data)
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
