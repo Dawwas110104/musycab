@@ -1024,6 +1024,7 @@ select.form-control:not([size]):not([multiple]) {
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.3px;
+  border-radius: 10px;
 }
 .card .card-stats .card-stats-items {
   display: flex;
