@@ -48,7 +48,7 @@
                             </div>
                             <div class="form-group mb-0">
                                 <label>Misi</label>
-                                <textarea class="form-control" required="">{{ $data->visi }}</textarea>
+                                <textarea class="form-control" required="">{{ $data->misi }}</textarea>
                             </div>
                         </div>
                         <div class="card-footer text-right">
