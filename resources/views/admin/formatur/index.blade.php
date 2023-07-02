@@ -95,28 +95,57 @@
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Import Data Calon Formatur</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="col-10" style="display:relative;">
-                    <form action="{{ route('import') }}" method="post" enctype="multipart/form-data">
-                        @csrf
-                        <input type="file" name="file" class="custom-file-input" placeholder="Recipient's username"
-                            aria-label="Recipient's username" aria-describedby="button-addon2">
-                        <label class="custom-file-label" for="customFile">Choose file</label>
-                    </form>
+            <form id="modal-details" action="{{ route('formatur.import') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Import Data Calon Formatur</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Import</button>
-            </div>
+                <div class="modal-body">
+                    <div class="col-10" style="display:relative;">
+                        <div style="position: relative; display: inline-block;">
+                            <input name="file" type="file" class="custom-file-input btn-primary" id="customFile" required>
+                            <label class="custom-file-label" for="customFile">Import Data</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" form="modal-details">Import</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
+{{-- End Modal Import --}}
+
+{{-- Modal Import --}}
+<!-- <div class="modal fade" id="import" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <form id="modal-details" action="{{ route('formatur.import') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Import Data Calon Formatur</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-10" style="display:relative;">
+                        <input name="file" type="file" class="custom-file-input btn-primary" id="customFile" required>
+                        <label class="custom-file-label" for="customFile">Choose file</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" form="modal-details">Import</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div> -->
 {{-- End Modal Import --}}
 
 <!-- Modal Tambah -->
@@ -231,39 +260,40 @@
         console.log(id);
         Swal.fire({
             title: 'Are you sure?',
-            text: "It will permanently deleted !",
+            text: "You won't be able to revert this!",
             type: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
             confirmButtonText: 'Yes, delete it!'
-        }).then(function () {
-            $.ajax({
-                url: url,
-                type: 'POST',
-                data: {
-                    _token: "{{ csrf_token() }}",
-                    id: id
-                },
-                success: function () {
-                    Swal.fire({
-                        title: 'Deleted!',
-                        text: 'Your file has been deleted.',
-                        type: 'success',
-                        timer: 1000,
-                    });
-                    setTimeout(function () {
-                        location.reload(); // then reload the page.(3)
-                    }, 1000);
-                },
+        }).then((result) => {
+            if (result.value) {
+                $.ajax({
+                    url: url,
+                    type: 'POST',
+                    data: {
+                        _token: "{{ csrf_token() }}",
+                        id: id
+                    },
+                    success: function () {
+                        Swal.fire({
+                            title: 'Deleted!',
+                            text: 'Your file has been deleted.',
+                            type: 'success',
+                            timer: 1000,
+                        });
+                        setTimeout(function () {
+                            location.reload(); // then reload the page.(3)
+                        }, 1000);
+                    },
 
-                error: function () {
-                    alert('error');
-                },
-            })
-
+                    error: function () {
+                        alert('error');
+                    },
+                })
+            }
         })
+    });
 
-    })
 </script>
 @endsection

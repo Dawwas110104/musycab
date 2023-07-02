@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Models\Formatur;
+use App\Imports\FormatursImport;
+use Maatwebsite\Excel\Facades\Excel;
+
 
 class FormaturController extends Controller
 {
@@ -57,5 +60,12 @@ class FormaturController extends Controller
         return view('admin.formatur.detail', compact(
             'data'
         ));
+    }
+
+    public function import(Request $request)
+    {
+        Excel::import(new FormatursImport,request()->file('file'));
+
+        return redirect()->back()->with('status', 'Data berhasil diimport!');
     }
 }

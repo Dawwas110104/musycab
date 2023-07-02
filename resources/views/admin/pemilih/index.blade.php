@@ -49,8 +49,9 @@
                 <div class="float-right">
                     <button class="btn btn-success" type="submit" data-toggle="modal"
                     data-target="#import">Import</button>
-                    <button class="btn btn-sm btn-info" type="submit" data-toggle="modal"
-                    data-target="#Export">Export</button>
+                    <a href="{{ route('pemilih.export') }}" style="text-decoration:none; color:#fff!important;">
+                        <button class="btn btn-sm btn-info" type="button">Export</button>
+                    </a>
                     <a href="#" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#tambah">Tambah</a>
                 </div>
             </div>
@@ -74,7 +75,7 @@
                         @foreach($datas as $data)
                         <tr>
                             <td><?= $no++ ?></td>
-                            <td>{{ $data->name }}</td>
+                            <td>{{ $data->nama }}</td>
                             <td>{{ $data->asal }}</td>
                             <td>{{ $data->username }}</td>
                             <td>{{ $data->pass }}</td>
@@ -84,8 +85,11 @@
                                 </button>
                             </td>
                             <td>
+                                @if($data->status == 1)
                                 <div class="badge badge-success">Active</div>
+                                @else
                                 <div class="badge badge-danger">Not Active</div>
+                                @endif
                             </td>
                         </tr>
                         @endforeach
@@ -102,59 +106,30 @@
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Import Data Calon Formatur</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="col-10" style="display:relative;">
-                    <form action="{{ route('import') }}" method="post" enctype="multipart/form-data">
-                        @csrf
+            <form id="modal-details" action="{{ route('pemilih.import') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Import Data Calon Formatur</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-10" style="display:relative;">
                         <div style="position: relative; display: inline-block;">
-                            <input name="foto" type="file" class="custom-file-input btn-primary" id="customFile" required>
+                            <input name="file" type="file" class="custom-file-input btn-primary" id="customFile" required>
                             <label class="custom-file-label" for="customFile">Import Data</label>
                         </div>
-                    </form>
+                    </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Import</button>
-            </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" form="modal-details">Import</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
 {{-- End Modal Import --}}
-
-{{-- Modal Export --}}
-<div class="modal fade" id="Export" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Import Data Calon Formatur</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="col-10" style="display:relative;">
-                    <form action="{{ route('import') }}" method="post" enctype="multipart/form-data">
-                        @csrf
-                        <input type="file" name="file" class="custom-file-input" placeholder="Recipient's username"
-                            aria-label="Recipient's username" aria-describedby="button-addon2">
-                        <label class="custom-file-label" for="customFile">Choose file</label>
-                    </form>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Import</button>
-            </div>
-        </div>
-    </div>
-</div>
-{{-- End Modal Export --}}
 
 <!-- Modal Tambah -->
 <div class="modal fade" id="tambah" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -209,49 +184,48 @@
     //     $('#table-1').DataTable();
     // });
 
-    // Sweet Alert 2
-    $('.hapus').click(function(){
+// Sweet Alert 2
+    $('.hapus').click(function () {
         var id = $(this).data("id");
         var url = "{{ route('pemilih.hapus',":id") }}",
-        url = url.replace(':id', id);
+            url = url.replace(':id', id);
 
-        console.log(url);
+        console.log(id);
         Swal.fire({
             title: 'Are you sure?',
-            text: "It will permanently deleted !",
+            text: "You won't be able to revert this!",
             type: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
             confirmButtonText: 'Yes, delete it!'
-        }).then(function() {
-            $.ajax({
-                url: url,
-                type: 'POST',
-                data: {
-                            _token: "{{ csrf_token() }}",
-                            id: id
-                        },
-            
-                success: function (){
-                    Swal.fire({
-                        title: 'Deleted!',
-                        text: 'Your file has been deleted.',
-                        type: 'success',
-                        timer: 1000,
-                    });
-                    setTimeout(function(){
-                        location.reload(); // then reload the page.(3)
-                    }, 1000);
-                },
+        }).then((result) => {
+            if (result.value) {
+                $.ajax({
+                    url: url,
+                    type: 'POST',
+                    data: {
+                        _token: "{{ csrf_token() }}",
+                        id: id
+                    },
+                    success: function () {
+                        Swal.fire({
+                            title: 'Deleted!',
+                            text: 'Your file has been deleted.',
+                            type: 'success',
+                            timer: 1000,
+                        });
+                        setTimeout(function () {
+                            location.reload(); // then reload the page.(3)
+                        }, 1000);
+                    },
 
-                error: function(){
-                    alert('error');
-                },
-            })
-            
+                    error: function () {
+                        alert('error');
+                    },
+                })
+            }
         })
-    
-    })
+    });
 </script>
 @endsection

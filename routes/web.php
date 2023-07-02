@@ -33,12 +33,20 @@ Route::middleware(['admin'])->group(function() {
     Route::get('/admin/formatur/detail/{id}', [FormaturController::class, 'detail'])->name('formatur.detail');
     Route::post('/admin/formatur/tambah', [FormaturController::class, 'create'])->name('formatur.tambah');
     Route::post('/admin/formatur/hapus/{id}', [FormaturController::class, 'destroy'])->name('formatur.hapus');
+
+    Route::post('/formatur/import', [FormaturController::class, 'import'])->name('formatur.import');
+
     
     
     Route::get('/admin/pemilih/index', [PemilihController::class, 'index'])->name('pemilih.index');
     Route::get('/admin/pemilih/detail/{id}', [PemilihController::class, 'detail'])->name('pemilih.detail');
     Route::post('/admin/pemilih/tambah', [PemilihController::class, 'create'])->name('pemilih.tambah');
     Route::post('/admin/pemilih/hapus/{id}', [PemilihController::class, 'destroy'])->name('pemilih.hapus');
+    Route::get('/admin/pemilih/export', [PemilihController::class, 'export'])->name('pemilih.export');
+    Route::get('/admin/pemilih/active', [PemilihController::class, 'active'])->name('active');
+    Route::get('/admin/pemilih/non-active', [PemilihController::class, 'nonActive'])->name('non-active');
+
+    Route::post('/pemilih/import', [PemilihController::class, 'import'])->name('pemilih.import');
 });
 
 // Guest
@@ -46,14 +54,10 @@ Route::get('/guest', [GuestController::class, 'index'])->name('guest.index');
 Route::post('/guest/pilih', [GuestController::class, 'pilih'])->name('guest.pilih');
 Route::get('/guest/terimakasih', [GuestController::class, 'terimakasih'])->name('terimakasih');
 
-Route::post('/import', [AdminController::class, 'import'])->name('import');
 
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-
-
-
-
+Route::get('/admin/pemilih/export/view', [PemilihController::class, 'view'])->name('pemilih.pdf');

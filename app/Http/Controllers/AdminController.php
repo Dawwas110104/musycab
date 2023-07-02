@@ -7,6 +7,7 @@ use App\Models\Formatur;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\UsersImport;
+use App\Imports\PemilihsImport;
 
 class AdminController extends Controller
 {
@@ -101,7 +102,7 @@ class AdminController extends Controller
 
     public function import()
     {
-        Excel::import(new UsersImport,request()->file('file'));
+        Excel::import(new PemilihsImport,request()->file('file'));
 
         return redirect()->back();
     }

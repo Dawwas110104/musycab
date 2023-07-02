@@ -16,10 +16,11 @@ class CreatePemilihsTable extends Migration
         Schema::create('pemilihs', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('asal');
-            $table->string('username');
-            $table->string('pass');
-            $table->string('password');
+            $table->string('asal')->nullable();
+            $table->integer('role_id')->nullable();
+            $table->string('username')->nullable();
+            $table->string('pass')->nullable();
+            $table->integer('status')->defaault(1);
             $table->timestamps();
         });
     }

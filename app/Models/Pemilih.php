@@ -12,7 +12,9 @@ class Pemilih extends Model
     protected $fillable = [
         'nama',
         'asal',
+        'role_id',
         'username',
-        'password',
+        'pass',
+        'status',
     ];
 }
