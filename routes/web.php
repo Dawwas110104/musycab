@@ -32,6 +32,7 @@ Route::middleware(['admin'])->group(function() {
     Route::get('/admin/formatur/index', [FormaturController::class, 'index'])->name('formatur.index');
     Route::get('/admin/formatur/detail/{id}', [FormaturController::class, 'detail'])->name('formatur.detail');
     Route::post('/admin/formatur/tambah', [FormaturController::class, 'create'])->name('formatur.tambah');
+    Route::post('/admin/formatur/update/{id}', [FormaturController::class, 'update'])->name('formatur.update');
     Route::post('/admin/formatur/hapus/{id}', [FormaturController::class, 'destroy'])->name('formatur.hapus');
 
     Route::post('/formatur/import', [FormaturController::class, 'import'])->name('formatur.import');

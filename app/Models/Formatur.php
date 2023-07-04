@@ -11,6 +11,12 @@ class Formatur extends Model
 
     protected $fillable = [
         'nama',
+        'ttl',
+        'asal',
+        'bidang',
+        'telp',
+        'email',
+        'riwayat',
         'visi',
         'misi',
         'image',

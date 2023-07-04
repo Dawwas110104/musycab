@@ -75,7 +75,7 @@
                         @foreach($datas as $data)
                         <tr>
                             <td><?= $no++ ?></td>
-                            <td>{{ $data->nama }}</td>
+                            <td>{{ $data->name }}</td>
                             <td>{{ $data->asal }}</td>
                             <td>{{ $data->username }}</td>
                             <td>{{ $data->pass }}</td>

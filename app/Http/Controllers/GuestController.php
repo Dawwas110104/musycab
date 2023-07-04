@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Formatur;
 use App\Models\Pilihan;
 use App\Models\Pemilih;
+use App\Models\User;
 
 class GuestController extends Controller
 {

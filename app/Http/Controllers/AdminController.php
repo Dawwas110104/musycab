@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Auth;
+use App\Models\Pilihan;
 use App\Models\Formatur;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\UsersImport;
@@ -24,9 +26,19 @@ class AdminController extends Controller
     
     public function index()
     {
-        $user = Auth::user();
-        // return $user;
-        return view('admin.index');
+        $pemilihs = User::where('role_id', 2)->get();
+        $formaturs = Formatur::all();
+        $sudahs = count(User::where('role_id', 2)->where('status', 0)->get());
+        $belums = count(User::where('role_id', 2)->where('status', 1)->get());
+        $pilihans = Pilihan::all();
+        
+        return view('admin.index', compact([
+            'pemilihs',
+            'formaturs',
+            'belums',
+            'sudahs',
+            'pilihans'
+        ]));
     }
 
     /**

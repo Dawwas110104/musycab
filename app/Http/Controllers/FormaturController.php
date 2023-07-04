@@ -43,6 +43,23 @@ class FormaturController extends Controller
         return redirect()->route('formatur.index')->with('status', 'Data berhasil ditambahkan!');
     }
 
+    public function update(Request $request, $id)
+    {
+        Formatur::where('id', $id)->update([
+            'nama' => $request->nama,
+            'email' => $request->email,
+            'ttl' => $request->ttl,
+            'asal' => $request->asal,
+            'bidang' => $request->bidang,
+            'telp' => $request->telp,
+            'riwayat' => $request->riwayat,
+            'visi' => $request->visi,
+            'misi' => $request->misi,
+        ]);
+
+        return redirect()->back()->with('status', 'Data berhasil diperbarui');
+    }
+
     public function destroy($id)
     {
         Formatur::where('id', $id)->delete();
@@ -56,7 +73,6 @@ class FormaturController extends Controller
     {
         $data = Formatur::where('id', $id)->first();
 
-        // return $data;
         return view('admin.formatur.detail', compact(
             'data'
         ));

@@ -17,7 +17,7 @@ class PemilihController extends Controller
 {
     public function index()
     {
-        $datas = Pemilih::all();
+        $datas = User::where('role_id', 2)->get();
 
         return view('admin.pemilih.index', compact([
             'datas',
