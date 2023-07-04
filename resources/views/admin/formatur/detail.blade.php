@@ -41,19 +41,22 @@
                         <h4 style="color:#262626">Detail Calon Formatur</h4>
                     </div>
                 </div>
-                <div class="col-5 text-center gallery">
+                <div class="col-5 text-center gallery" style="align-items: flex-start!important;">
                     <!-- <div class="gallery gallery-md">
                         <div class="gallery-item" style="
                         margin-top: 30px;
                         margin-right: 0px;
                         margin-bottom: 0px;
                         margin-left: 0px;
-                        width: 300px; height: 300px;" data-toggle="modal" data-target="#foto{{ $data->id }}"
-                            data-image="{{ asset('image/' . $data->image) }}" data-title="Image 1"></div>
+                        width: 300px; height: 300px;" 
+                        data-toggle="modal" 
+                        data-target="#foto{{ $data->id }}" 
+                        data-image="{{ asset('image/' . $data->image) }}" 
+                        data-title="Image 1"></div>
                     </div> -->
-                    <div class="chocolat-parent gallery gallery-md">
-                        <a class="chocolat-image" href="{{ asset('image/' . $data->image) }}" data-sizes="10vw" style="border-radius: 16px;">
-                            <img src="{{ asset('image/' . $data->image) }}" />
+                    <div class="gallery-md" style="align-items: flex-start!important; padding-top:50px;">
+                        <a class="gallery-item" href="{{ asset('image/' . $data->image) }}">
+                            <img width="200" src="{{ asset('image/' . $data->image) }}" />
                         </a>
                     </div>
                 </div>
@@ -112,8 +115,8 @@
 @section('js')
 <script>
 document.addEventListener("DOMContentLoaded", function(event) { 
-    Chocolat(document.querySelectorAll('.chocolat-parent .chocolat-image'), {
-        // container: document.querySelector('.gallery'),
+    Chocolat(document.querySelectorAll('.gallery-md .gallery-item'), {
+        
     })
 })
 </script>
