@@ -41,8 +41,8 @@
                         <h4 style="color:#262626">Detail Calon Formatur</h4>
                     </div>
                 </div>
-                <div class="col-5 text-center">
-                    <div class="gallery gallery-md">
+                <div class="col-5 text-center gallery">
+                    <!-- <div class="gallery gallery-md">
                         <div class="gallery-item" style="
                         margin-top: 30px;
                         margin-right: 0px;
@@ -50,6 +50,11 @@
                         margin-left: 0px;
                         width: 300px; height: 300px;" data-toggle="modal" data-target="#foto{{ $data->id }}"
                             data-image="{{ asset('image/' . $data->image) }}" data-title="Image 1"></div>
+                    </div> -->
+                    <div class="chocolat-parent gallery gallery-md">
+                        <a class="chocolat-image" href="{{ asset('image/' . $data->image) }}" data-sizes="10vw" style="border-radius: 16px;">
+                            <img src="{{ asset('image/' . $data->image) }}" />
+                        </a>
                     </div>
                 </div>
                 <div class="col-7">
@@ -78,7 +83,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Nomor Telpon Aktif</label>
-                                <input name="telp" type="text" class="form-control" value="{{ $data->telp }}">
+                                <input name="telp" type="number" class="form-control" value="{{ $data->telp }}">
                             </div>
                             <div class="form-group">
                                 <label>Riwayat Perkaderan</label>
@@ -102,4 +107,14 @@
         </div>
     </div>
 </section>
+@endsection
+
+@section('js')
+<script>
+document.addEventListener("DOMContentLoaded", function(event) { 
+    Chocolat(document.querySelectorAll('.chocolat-parent .chocolat-image'), {
+        // container: document.querySelector('.gallery'),
+    })
+})
+</script>
 @endsection

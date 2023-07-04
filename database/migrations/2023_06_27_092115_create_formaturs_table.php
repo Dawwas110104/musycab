@@ -19,7 +19,7 @@ class CreateFormatursTable extends Migration
             $table->date('ttl')->nullable();
             $table->string('asal')->nullable();
             $table->string('bidang')->nullable();
-            $table->integer('telp')->nullable();
+            $table->string('telp')->nullable();
             $table->string('email')->nullable()->unique();
             $table->string('riwayat')->nullable();
             $table->string('visi')->nullable();

@@ -16,8 +16,12 @@
   <link rel="stylesheet" href="{{ asset('assets/css/components.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-social.css') }}">
 
+  <!-- Chocolate Gallery -->
+  <link rel="stylesheet" href="{{ asset('assets/css/chocolat.css') }}" type="text/css" media="screen" >
+
   <!-- CSS Tambahan -->
   @yield('head')
+  
 </head>
 
 <body class="@if(Auth::user()->role_id == 2) sidebar-mini @endif">
@@ -562,6 +566,8 @@
   <!-- Template JS File -->
   <script src="{{ asset('assets/js/scripts.js') }}"></script>
   <!-- <script src="{{ asset('assets/js/custom2.js') }}"></script> -->
+
+  <script type="text/javascript" src="{{ asset('assets/js/chocolat.js') }}"></script>
 
   <!-- JS Tambahan -->
   @yield('js')
