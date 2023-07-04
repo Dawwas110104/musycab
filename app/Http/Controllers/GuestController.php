@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Formatur;
 use App\Models\Pilihan;
+use App\Models\Pemilih;
 
 class GuestController extends Controller
 {
@@ -26,6 +27,11 @@ class GuestController extends Controller
                 'untuk' => $value,
             ]);
         }
+
+        User::where('id', Auth::user()->id)->update([
+            'status' => 0,
+        ]);
+        
 
         return redirect()->route('terimakasih')->with('status', 'Terimakasih telah memilih!');
     }

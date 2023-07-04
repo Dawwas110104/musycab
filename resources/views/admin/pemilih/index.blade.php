@@ -109,7 +109,7 @@
             <form id="modal-details" action="{{ route('pemilih.import') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Import Data Calon Formatur</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">Import Data Pemilih</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

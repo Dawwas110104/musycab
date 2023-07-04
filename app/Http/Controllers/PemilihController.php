@@ -62,7 +62,6 @@ class PemilihController extends Controller
     {
         $data = Pemilih::where('id', $id)->first();
 
-        // return $data;
         return view('admin.pemilih.detail', compact(
             'data'
         ));
@@ -85,7 +84,6 @@ class PemilihController extends Controller
 
     public function import(Request $request)
     {
-        return $request;
         Excel::import(new PemilihsImport,request()->file('file'));
 
         return redirect()->back()->with('status', 'Data berhasil diimport!');

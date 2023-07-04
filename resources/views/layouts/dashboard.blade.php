@@ -21,6 +21,8 @@
 </head>
 
 <body class="@if(Auth::user()->role_id == 2) sidebar-mini @endif">
+
+  @if(Auth::user()->status == 1)
   <div id="app">
     <div class="main-wrapper">
       <div class="navbar-bg"></div>
@@ -518,6 +520,35 @@
       </footer>
     </div>
   </div>
+  @else
+    <section class="section">
+      <div class="container mt-5">
+        <div class="page-error">
+          <div class="page-inner">
+            <h1>404</h1>
+            <div class="page-description">
+              Whoopps, your account is'nt active yet. Please activated before you go!
+            </div>
+          </div>
+        </div>
+        <div class="row" style="display: flex; justify-content:center; padding-top: 50px;">
+          <div class="col-2">
+            <a class="dropdown-item has-icon btn-danger" href="{{ route('logout') }}"  style="color:#fff"
+              onclick="event.preventDefault();
+              document.getElementById('logout-form').submit();">
+            <i class="fas fa-sign-out-alt"></i>Logout
+            </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+            </form>
+          </div>
+        </div>
+        <div class="simple-footer mt-5">
+          Copyright &copy; Hangker Sepanjang 2023
+        </div>
+      </div>
+    </section>
+  @endif
   
   <!-- General JS Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>  
