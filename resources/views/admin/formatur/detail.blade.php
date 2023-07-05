@@ -65,7 +65,7 @@
                         @csrf
                         <div class="card-body">
                             <div class="form-group">
-                                <label>Nama</label>
+                                <label>Nama Lengkap</label>
                                 <input name="nama" type="text" class="form-control" required value="{{ $data->nama }}">
                             </div>
                             <div class="form-group">
@@ -77,15 +77,28 @@
                                 <input name="ttl" type="date" class="form-control" value="{{ $data->ttl }}">
                             </div>
                             <div class="form-group">
-                                <label>Asal Ranting / Cabang</label>
-                                <input name="asal" type="text" class="form-control" value="{{ $data->asal }}">
+                                <label>Asal Ranting/Cabang</label>
+                                    <select class="form-control" value="{{ $data->asal }}">
+                                        <option>PC IPM Sepanjang</option>
+                                        <option>MTs Muhammadiyah 1 Taman</option>
+                                        <option>SMP Muhammadiyah 2 Taman</option>
+                                        <option>SMA Muhammadiyah 1 Taman</option>
+                                        <option>SMK Muhammadiyah 1 Taman</option>
+                                        <option>SMK Muhammadiyah 2 Taman</option>
+                                    </select>
                             </div>
                             <div class="form-group">
-                                <label>Bidang</label>
-                                <input name="bidang" type="text" class="form-control" value="{{ $data->bidang }}">
+                            <label>Bidang</label>
+                                    <select class="form-control" value="{{ $data->bidang }}">
+                                        <option>Bidang Pengurus Harian</option>
+                                        <option>Perkaderan</option>
+                                        <option>Kajian Dakwah Islam</option>
+                                        <option>Pengkajian Ilmu Pengetahuan</option>
+                                        <option>Apresiasi Seni Budaya dan Olahraga</option>
+                                    </select>
                             </div>
                             <div class="form-group">
-                                <label>Nomor Telpon Aktif</label>
+                                <label>Nomor Telepon Aktif</label>
                                 <input name="telp" type="number" class="form-control" value="{{ $data->telp }}">
                             </div>
                             <div class="form-group">
